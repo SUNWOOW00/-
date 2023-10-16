@@ -1,0 +1,44 @@
+package s21223_01;
+import java.util.Random;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Static {
+
+	public static void main(String[] args) {
+	Random random = new Random();
+	Scanner sc = new Scanner(System.in);
+	System.out.println("몇 명");
+	int num = sc.nextInt();
+	System.out.println("총 인원");
+	int sum = sc.nextInt();
+	int rd[] = new int[num];
+	  
+	
+	for (int k ='A'; k <= 'E'; k++) {
+		System.out.print((char) k + "요일: " );
+		for(int i = 0; i<rd.length; i++) {
+			rd[i] =random.nextInt(sum)+1;
+			for(int d=0;d<i;d++) {
+				if(rd[i]==rd[d]) {
+					i--;
+					break;
+				}
+			}
+			
+		}
+		Arrays.sort(rd);
+		for(int j=0; j<rd.length;j++) {
+			if(rd[j] <10) {
+				System.out.print("0"+rd[j]+" ");
+			}else{
+				System.out.print(rd[j]+" ");
+			}
+			
+		}
+		System.out.println();
+	}
+	System.out.println();
+	
+	}
+
+}
